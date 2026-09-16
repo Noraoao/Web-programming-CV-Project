@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naura | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-warm: #f4ede4;
+      --bg-dark: #3a2420;
+      --text-light: #f5efe6;
+      --text-dark: #281814;
+      --brown-accent: #8b4f3d;
+      --card-bg: rgba(255, 255, 255, 0.62);
+      --shadow: 0 18px 45px rgba(58, 36, 32, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at top right, #fffaf4 0, var(--bg-warm) 45%, #eadbca 100%);
+      color: var(--text-dark);
+      font-family: 'Jost', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0 20px;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 30px;
+      letter-spacing: 1px;
+      color: var(--text-dark);
+    }
+
+    .logo span {
+      color: var(--brown-accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    .menu-link {
+      border: 1px solid var(--brown-accent);
+      padding: 6px 14px;
+      text-decoration: none;
+      border-radius: 999px;
+      color: var(--brown-accent);
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-link:hover {
+      background-color: var(--brown-accent);
+      color: var(--text-light);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 30px;
+      align-items: center;
+      padding: 72px 0 90px;
+    }
+
+    .hero-text .subtitle {
+      font-size: 14px;
+      color: var(--brown-accent);
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(48px, 7vw, 76px);
+      line-height: 1.1;
+      letter-spacing: 1px;
+    }
+
+    .hero-text h1 span {
+      color: var(--brown-accent);
+    }
+
+    .hero-text p {
+      margin: 15px 0 25px;
+      font-size: 16px;
+      max-width: 500px;
+    }
+
+    .social-boxes {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-card {
+      width: 55px;
+      height: 55px;
+      border: 1px solid var(--brown-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--brown-accent);
+      font-weight: bold;
+      font-size: 12px;
+      border-radius: 14px;
+      transition: all 0.3s;
+    }
+
+    .social-card:hover {
+      background: var(--brown-accent);
+      color: var(--text-light);
+    }
+
+    .hero-image-container {
+      width: 100%;
+      height: 320px;
+      border: 8px solid rgba(255, 255, 255, 0.6);
+      border-radius: 24px 80px 24px 80px;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--brown-accent), var(--bg-dark));
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image-container:hover {
+      transform: rotate(0deg) translateY(-6px);
+    }
+
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-alt {
+      background: linear-gradient(135deg, var(--bg-dark), #5a342c);
+      color: var(--text-light);
+    }
+
+    .section-alt .menu-link, 
+    .section-alt h2,
+    .section-alt .info-item span,
+    .section-alt .skill-category h3 {
+      color: var(--text-light);
+    }
+
+    .section-alt .info-item {
+      border-bottom-color: rgba(245, 239, 230, 0.3);
+    }
+
+    .section-alt .tag {
+      background-color: var(--text-light);
+      color: var(--text-dark);
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 44px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      color: var(--brown-accent);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .info-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(139, 79, 61, 0.35);
+      padding: 14px 0;
+      gap: 20px;
+    }
+
+    .info-item span {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: var(--brown-accent);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      padding: 20px;
+      border: 1px solid rgba(139, 79, 61, 0.25);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 50px rgba(58, 36, 32, 0.18);
+    }
+
+    .skill-category h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: var(--brown-accent);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--brown-accent);
+      color: var(--text-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    footer {
+      background-color: var(--text-dark);
+      color: var(--text-light);
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      header, .hero, .about-grid, .skills-grid {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      header {
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 42px 0 65px;
+      }
+
+      .info-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .hero-image-container {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="logo">naura <span>rizky ameira.</span></div>
+      <nav>
+        <a href="#about" class="menu-link">About Me</a>
+        <a href="#education" class="menu-link">Education</a>
+        <a href="#skills" class="menu-link">Skills</a>
+        <a href="#contact" class="menu-link">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <div class="subtitle">5025251001 • Informatics Student</div>
+        <h1>HELLO, I AM <span>NAURA</span></h1>
+        <p>I am an Informatics student at ITS. Deeply curious with machine learning, data science, and web development.</p>
+        
+        <div class="social-boxes">
+          <a href="https://gmail.com/noraasurabaya@gmail.com" class="social-card">Email</a>
+          <a href="https://github.com/Noraoao" target="_blank" class="social-card">GitHub</a>
+          <a href="https://www.linkedin.com/in/naura-rizky-ameira-77b000378/" target="_blank" class="social-card">LinkedIn</a>
+          <a href="https://www.instagram.com/norzy._?stkn=MTVzb2l2eXhrZzkwMQ==" target="_blank" class="social-card">IG</a>
+        </div>
+      </div>
+
+      <div class="hero-image-container">
+        <img src="foto-nora.png" alt="Naura Rizky Ameira">
+      </div>
+    </section>
+  </div>
+
+  <section id="about" class="section-alt">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-grid">
+        <p>I like learning new things, making designs, and turning ideas into simple websites that people can enjoy.</p>
+        <div class="info-list">
+          <div class="info-item">
+            <span>Based In</span>
+            <strong>Indonesia</strong>
+          </div>
+          <div class="info-item">
+            <span>Focus</span>
+            <strong>Web Design & Data Science</strong>
+          </div>
+          <div class="info-item">
+            <span>Current Status</span>
+            <strong>Learning + Building</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="info-list">
+        <div class="info-item">
+          <span>High School</span>
+          <strong>SMA Al Hikmah Surabaya (2023 - 2025)</strong>
+        </div>
+        <div class="info-item">
+          <span>University</span>
+          <strong>Teknik Informatika ITS (2025 - Present)</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section-alt">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Programming Languages</h3>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Linguistic Languages</h3>
+          <div class="tags">
+            <span class="tag">Indonesian</span>
+            <span class="tag">English</span>
+            <span class="tag">Javanese</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <p style="margin-bottom: 10px;">Feel free to reach out for collaborations or questions!</p>
+      <div style="font-size: 14px; opacity: 0.8;">© 2026 Naura Rizky Ameira. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
